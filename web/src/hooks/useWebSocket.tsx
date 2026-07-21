@@ -85,7 +85,7 @@ export function WebSocketProvider({ children, url = API_URL }: { children: React
 
   useEffect(() => {
     const socket = io(url, {
-      transports: ['websocket'],
+      transports: ['polling', 'websocket'],
       reconnection: true,
       reconnectionAttempts: Infinity,
       reconnectionDelay: 1000,
