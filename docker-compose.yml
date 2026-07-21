@@ -1,0 +1,46 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT:-development}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - ANTHROPIC_BASE_URL=${ANTHROPIC_BASE_URL:-}
+      - ELEVENLABS_API_KEY=${ELEVENLABS_API_KEY:-}
+      - JWT_SECRET=${JWT_SECRET:-dev-jwt-secret}
+      - PRE_SHARED_SECRET=${PRE_SHARED_SECRET:-dev-shared-secret}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:5173}
+      - WHISPER_MODEL=${WHISPER_MODEL:-small}
+      - TTS_PROVIDER=${TTS_PROVIDER:-gtts}
+      - APK_DOWNLOAD_URL=${APK_DOWNLOAD_URL:-}
+    volumes:
+      # Persist the downloaded Whisper model between restarts so the first
+      # query after a rebuild is not delayed by a re-download.
+      - whisper-cache:/home/appuser/.cache/whisper
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    restart: unless-stopped
+
+volumes:
+  whisper-cache:

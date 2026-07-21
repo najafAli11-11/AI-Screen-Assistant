@@ -1,0 +1,21 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+dist/
+build/
+.env
+*.apk
+node_modules/
+web/node_modules/
+web/dist/
+.DS_Store
+
+# Project-specific
+.claude/
+AI_Screen_Assistant_Specification_v2.docx
+spec_extracted.txt
+leftover.md
