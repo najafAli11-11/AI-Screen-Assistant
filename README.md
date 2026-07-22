@@ -18,7 +18,15 @@ Millions of people — elderly parents, first-time smartphone users, people with
 >
 > **Access code:** `z3sz9ldAFo7bIISQh29zIw`
 
-Open the link, enter the access code, share your screen, and ask a question in Urdu, English, or Hindi. The app also runs locally at `http://localhost:5173` after following the setup instructions below.
+**Try it in 30 seconds:**
+
+1. Open the link above.
+2. Enter the access code `z3sz9ldAFo7bIISQh29zIw` and click **Get Started**.
+3. Click to **share your screen** (a browser prompt will appear).
+4. Press the ask button and **speak a question** in Urdu, English, or Hindi — e.g. *"What is on my screen and what should I do next?"*
+5. The assistant reads your screen and replies with short, spoken, step-by-step guidance plus on-screen captions.
+
+The app also runs locally at `http://localhost:5173` after following the setup instructions below.
 
 ---
 
@@ -90,12 +98,16 @@ This prompt was designed to produce guidance that is short, plain-text (no markd
 
 ## Screenshots
 
-> **[Screenshots to be added after deployment]**
+> Three screenshots of the app in action. Images live in `docs/screenshots/`.
 
-Planned screenshots:
-1. Welcome screen with access code input
-2. Active session with screen share and pipeline progress
-3. Chat history with AI-generated steps and captions overlay
+### 1. Welcome screen — enter access code
+![Welcome screen with access code input](docs/screenshots/1-welcome.png)
+
+### 2. Active session — screen shared with live pipeline progress
+![Active session sharing the screen with pipeline progress](docs/screenshots/2-session.png)
+
+### 3. Conversation — AI-generated steps with captions
+![Conversation thread showing AI steps and captions](docs/screenshots/3-conversation.png)
 
 ---
 
@@ -170,4 +182,4 @@ npm run dev
 
 ## License
 
-This project was built as a final university project.
+This project was built as a final project for **ACT AI**.

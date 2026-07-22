@@ -296,6 +296,23 @@ select:focus-visible {
   white-space: nowrap;
 }
 
+.welcome-hint {
+  margin: 16px 0 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.welcome-hint a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.welcome-hint a:hover {
+  text-decoration: underline;
+}
+
 .welcome-langs {
   margin-top: 32px;
   display: flex;

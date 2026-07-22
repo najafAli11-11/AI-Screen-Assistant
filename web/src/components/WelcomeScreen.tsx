@@ -64,6 +64,18 @@ export function WelcomeScreen({ onAuthenticate, error }: WelcomeScreenProps) {
         </button>
       </div>
 
+      <p className="welcome-hint">
+        Don&apos;t have an access code?{' '}
+        <a
+          href="https://github.com/najafAli11-11/AI-Screen-Assistant"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open the GitHub repo
+        </a>{' '}
+        to get it.
+      </p>
+
       {error && (
         <div className="alert" role="alert" style={{ maxWidth: 440, marginTop: 16 }}>
           <strong>Auth Error</strong>
