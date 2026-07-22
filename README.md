@@ -14,9 +14,11 @@ Millions of people — elderly parents, first-time smartphone users, people with
 
 ## Live Demo
 
-> **[Live URL coming soon — deployment in progress]**
+> **Live app:** https://ai-screen-assistant-web-production.up.railway.app/
+>
+> **Access code:** `z3sz9ldAFo7bIISQh29zIw`
 
-The app runs locally at `http://localhost:5173` after following the setup instructions below.
+Open the link, enter the access code, share your screen, and ask a question in Urdu, English, or Hindi. The app also runs locally at `http://localhost:5173` after following the setup instructions below.
 
 ---
 
