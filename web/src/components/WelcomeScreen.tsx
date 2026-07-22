@@ -65,15 +65,15 @@ export function WelcomeScreen({ onAuthenticate, error }: WelcomeScreenProps) {
       </div>
 
       <p className="welcome-hint">
-        Don&apos;t have an access code?{' '}
+        Don&apos;t have an access code? Open the{' '}
         <a
-          href="https://github.com/najafAli11-11/AI-Screen-Assistant"
+          href="https://github.com/najafAli11-11/AI-Screen-Assistant#live-demo"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Open the GitHub repo
+          GitHub repo
         </a>{' '}
-        to get it.
+        — it&apos;s in the README under &ldquo;Live Demo&rdquo;.
       </p>
 
       {error && (
