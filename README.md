@@ -98,16 +98,22 @@ This prompt was designed to produce guidance that is short, plain-text (no markd
 
 ## Screenshots
 
-> Three screenshots of the app in action. Images live in `docs/screenshots/`.
+Screenshots of the app in action (images live in `docs/screenshots/`).
 
-### 1. Welcome screen — enter access code
-![Welcome screen with access code input](docs/screenshots/1-welcome.png)
+### 1. Welcome screen — enter the access code
+![Welcome screen with access code input and language options](docs/screenshots/1-welcome.png)
 
-### 2. Active session — screen shared with live pipeline progress
-![Active session sharing the screen with pipeline progress](docs/screenshots/2-session.png)
+### 2. Workspace — pick a language and start a session
+![Main workspace with guidance language selector and Start Screen Share / Ask controls](docs/screenshots/2-workspace.png)
 
-### 3. Conversation — AI-generated steps with captions
-![Conversation thread showing AI steps and captions](docs/screenshots/3-conversation.png)
+### 3. Screen sharing — choose what to share
+![Browser screen-share picker showing Tab, Window, and Entire Screen options](docs/screenshots/3-screen-share.png)
+
+### 4. Listening — recording the spoken question
+![Active session recording audio with the live waveform and pipeline on the Recording step](docs/screenshots/4-listening.png)
+
+### 5. Analyzing — transcribing and understanding the screen
+![Pipeline progressing through Capturing, Recording, and Transcribing while analyzing the screen and question](docs/screenshots/5-analyzing.png)
 
 ---
 
