@@ -62,7 +62,12 @@ async def stream_guidance(
     client = _get_client()
     system_prompt = build_prompt(language, session_context)
     language_name = LANGUAGE_NAMES.get(language, "English")
-    async with client.messages.stream(
+    # Non-streaming call. Anthropic-compatible resellers (e.g. agentrouter ->
+    # Bedrock) emit SSE events with extra/null fields that newer versions of the
+    # Anthropic SDK's streaming parser silently drop, yielding an empty
+    # text_stream on an HTTP 200. messages.create() reads the final content[]
+    # array instead and is unaffected by those non-standard stream events.
+    message = await client.messages.create(
         model=settings.claude_model,
         max_tokens=settings.claude_max_tokens,
         system=system_prompt,
@@ -88,6 +93,9 @@ async def stream_guidance(
                 ],
             }
         ],
-    ) as stream:
-        async for text in stream.text_stream:
-            yield text
+    )
+    text = "".join(
+        getattr(block, "text", "") for block in message.content if getattr(block, "type", None) == "text"
+    )
+    if text:
+        yield text
